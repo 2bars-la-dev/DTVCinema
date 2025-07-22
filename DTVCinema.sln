@@ -3,7 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{F3816CE2-0C3A-4313-8615-375FA78A3CC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utility", "Utility\Utility.csproj", "{D7A1F93F-FFA0-433B-81BE-31684D0A9D00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{98646A32-8B98-4A48-AFA0-9F748350941A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTVCinema", "DTVCinema\DTVCinema.csproj", "{CB0D0F4E-7560-4A19-8A31-7F8A537A4C82}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3816CE2-0C3A-4313-8615-375FA78A3CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3816CE2-0C3A-4313-8615-375FA78A3CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3816CE2-0C3A-4313-8615-375FA78A3CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3816CE2-0C3A-4313-8615-375FA78A3CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7A1F93F-FFA0-433B-81BE-31684D0A9D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7A1F93F-FFA0-433B-81BE-31684D0A9D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7A1F93F-FFA0-433B-81BE-31684D0A9D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7A1F93F-FFA0-433B-81BE-31684D0A9D00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98646A32-8B98-4A48-AFA0-9F748350941A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98646A32-8B98-4A48-AFA0-9F748350941A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98646A32-8B98-4A48-AFA0-9F748350941A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98646A32-8B98-4A48-AFA0-9F748350941A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB0D0F4E-7560-4A19-8A31-7F8A537A4C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB0D0F4E-7560-4A19-8A31-7F8A537A4C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB0D0F4E-7560-4A19-8A31-7F8A537A4C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB0D0F4E-7560-4A19-8A31-7F8A537A4C82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
