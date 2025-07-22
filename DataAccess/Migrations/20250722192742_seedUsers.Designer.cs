@@ -4,6 +4,7 @@ using DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250722192742_seedUsers")]
+    partial class seedUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -476,41 +479,41 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 7, 22, 20, 14, 39, 74, DateTimeKind.Utc).AddTicks(7478),
+                            CreatedAt = new DateTime(2025, 7, 22, 19, 27, 39, 950, DateTimeKind.Utc).AddTicks(5418),
                             Email = "admin@dtv.com",
                             IsActive = true,
                             Name = "Admin",
-                            PasswordHash = "$2a$11$H0v.RNqYSPfRrleWiBOXUe3GdN5ifTwBqhBzp5SKjxyE.BAx.B5sW",
+                            PasswordHash = "$2a$11$2yOaX7nsbHmk.0Hi9eM9LeDo3vmZ5fZKnGHp74dxchldBY9Xk5E3C",
                             Role = "Admin"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 7, 22, 20, 14, 39, 74, DateTimeKind.Utc).AddTicks(7484),
+                            CreatedAt = new DateTime(2025, 7, 22, 19, 27, 39, 950, DateTimeKind.Utc).AddTicks(5422),
                             Email = "manager@dtv.com",
                             IsActive = true,
                             Name = "Manager",
-                            PasswordHash = "$2a$11$H0v.RNqYSPfRrleWiBOXUe3GdN5ifTwBqhBzp5SKjxyE.BAx.B5sW",
+                            PasswordHash = "$2a$11$2yOaX7nsbHmk.0Hi9eM9LeDo3vmZ5fZKnGHp74dxchldBY9Xk5E3C",
                             Role = "Manager"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 7, 22, 20, 14, 39, 74, DateTimeKind.Utc).AddTicks(7489),
+                            CreatedAt = new DateTime(2025, 7, 22, 19, 27, 39, 950, DateTimeKind.Utc).AddTicks(5425),
                             Email = "staff@dtv.com",
                             IsActive = true,
                             Name = "Staff",
-                            PasswordHash = "$2a$11$H0v.RNqYSPfRrleWiBOXUe3GdN5ifTwBqhBzp5SKjxyE.BAx.B5sW",
+                            PasswordHash = "$2a$11$2yOaX7nsbHmk.0Hi9eM9LeDo3vmZ5fZKnGHp74dxchldBY9Xk5E3C",
                             Role = "Staff"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2025, 7, 22, 20, 14, 39, 74, DateTimeKind.Utc).AddTicks(7494),
+                            CreatedAt = new DateTime(2025, 7, 22, 19, 27, 39, 950, DateTimeKind.Utc).AddTicks(5428),
                             Email = "user@dtv.com",
                             IsActive = true,
                             Name = "Customer",
-                            PasswordHash = "$2a$11$H0v.RNqYSPfRrleWiBOXUe3GdN5ifTwBqhBzp5SKjxyE.BAx.B5sW",
+                            PasswordHash = "$2a$11$2yOaX7nsbHmk.0Hi9eM9LeDo3vmZ5fZKnGHp74dxchldBY9Xk5E3C",
                             Role = "Customer"
                         });
                 });

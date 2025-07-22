@@ -15,7 +15,7 @@ namespace Models
         public decimal UnitPrice { get; set; }
 
         public string PaymentMethod { get; set; } = Constant.PaymentMethod_Online;
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = TimeHelper.GetVietnamTime();
         public Order? Order { get; set; }
         public Showtime? Showtime { get; set; }
         public Ticket? Ticket { get; set; }

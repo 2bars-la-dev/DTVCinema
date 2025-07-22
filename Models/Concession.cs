@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Utility;
 
 namespace Models
 {
@@ -18,7 +19,7 @@ namespace Models
 
         public bool IsActive { get; set; } = true;
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = TimeHelper.GetVietnamTime();
         public DateTime? UpdatedAt { get; set; }
         public ICollection<ConcessionDetail> ConcessionDetails { get; set; } = new List<ConcessionDetail>();
     }

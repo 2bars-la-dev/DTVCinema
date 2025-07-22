@@ -19,7 +19,7 @@ namespace Models
         [Required]
         public string Role { get; set; } = Constant.UserRole_Customer;
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = TimeHelper.GetVietnamTime();
         public bool IsActive { get; set; } = true;
 
         public ICollection<Order> Orders { get; set; } = new List<Order>();

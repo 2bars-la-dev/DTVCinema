@@ -16,7 +16,7 @@ namespace Models
         public string Status { get; set; } = Constant.OrderStatus_Pending;
         public string? TransactionId { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = TimeHelper.GetVietnamTime();
         public DateTime? UpdatedAt { get; set; }
 
         public ICollection<TicketDetail> TicketDetails { get; set; } = new List<TicketDetail>();

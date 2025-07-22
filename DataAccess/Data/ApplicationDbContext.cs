@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Models;
+using Utility;
 
 
 namespace DataAccess.Data
@@ -75,6 +76,51 @@ namespace DataAccess.Data
             {
                 entity.Property(t => t.Price).HasColumnType("decimal(18, 0)");
             });
+
+            // Seed Users
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    Id = 1,
+                    Email = "admin@dtv.com",
+                    PasswordHash = "$2a$11$H0v.RNqYSPfRrleWiBOXUe3GdN5ifTwBqhBzp5SKjxyE.BAx.B5sW", // "123123"
+                    Name = "Admin",
+                    Role = Constant.UserRole_Admin,
+                    CreatedAt = DateTime.UtcNow,
+                    IsActive = true
+                },
+                new User
+                {
+                    Id = 2,
+                    Email = "manager@dtv.com",
+                    PasswordHash = "$2a$11$H0v.RNqYSPfRrleWiBOXUe3GdN5ifTwBqhBzp5SKjxyE.BAx.B5sW", // "123123"
+                    Name = "Manager",
+                    Role = Constant.UserRole_Manager,
+                    CreatedAt = DateTime.UtcNow,
+                    IsActive = true
+                },
+                new User
+                {
+                    Id = 3,
+                    Email = "staff@dtv.com",
+                    PasswordHash = "$2a$11$H0v.RNqYSPfRrleWiBOXUe3GdN5ifTwBqhBzp5SKjxyE.BAx.B5sW", // "123123"
+                    Name = "Staff",
+                    Role = Constant.UserRole_Staff,
+                    CreatedAt = DateTime.UtcNow,
+                    IsActive = true
+                },
+                new User
+                {
+                    Id = 4,
+                    Email = "user@dtv.com",
+                    PasswordHash = "$2a$11$H0v.RNqYSPfRrleWiBOXUe3GdN5ifTwBqhBzp5SKjxyE.BAx.B5sW", // "123123"
+                    Name = "Customer",
+                    Role = Constant.UserRole_Customer,
+                    CreatedAt = DateTime.UtcNow,
+                    IsActive = true
+                }
+            );
+
         }
 
         public override int SaveChanges()
@@ -92,7 +138,7 @@ namespace DataAccess.Data
         //This method sets the CreatedAt and UpdatedAt fields for entities
         private void SetAuditFields()
         {
-            var now = DateTime.UtcNow;
+            var now = TimeHelper.GetVietnamTime();
 
             foreach (var entry in ChangeTracker.Entries())
             {

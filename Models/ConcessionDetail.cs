@@ -16,7 +16,7 @@ namespace Models
 
         public string PaymentMethod { get; set; } = Constant.PaymentMethod_Offline;
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = TimeHelper.GetVietnamTime();
 
         public Order Order { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using Utility;
 
 namespace Models
 {
@@ -17,7 +18,7 @@ namespace Models
 
         public bool IsActive { get; set; } = true;
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = TimeHelper.GetVietnamTime();
         public DateTime? UpdatedAt { get; set; }
 
         public Province? Province { get; set; }
