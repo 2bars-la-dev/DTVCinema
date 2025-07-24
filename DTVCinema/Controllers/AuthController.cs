@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DataAccess.Data;
-using Utility;
-using Utility.DTOs;
+using BusinessLogicLayer;
+using BusinessLogicLayer.DTOs;
 
 namespace DTVCinema.Controllers
 {

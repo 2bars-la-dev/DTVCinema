@@ -1,11 +1,12 @@
+﻿using BusinessLogicLayer;
 using DataAccess.Data;
 using DataAccess.Repository;
 using DataAccess.Repository.IRepository;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Security.Claims;
 using System.Text;
 using Utility;
 
@@ -81,26 +82,33 @@ namespace DTVCinema
             // Add Authorization Policies
             builder.Services.AddAuthorization(options =>
             {
-                options.AddPolicy("AdminOnly",
-                    policy => policy.RequireClaim(ClaimTypes.Role, Constant.UserRole_Admin));
+                options.AddPolicy(Constant.AuthPolicy_AdminOnly,
+                    policy => policy.RequireRole(Constant.UserRole_Admin));
 
-                options.AddPolicy("ManagerOnly",
-                    policy => policy.RequireClaim(ClaimTypes.Role, Constant.UserRole_Manager));
+                options.AddPolicy(Constant.AuthPolicy_ManagerOnly,
+                    policy => policy.RequireRole(Constant.UserRole_Manager));
 
-                options.AddPolicy("StaffOnly",
-                    policy => policy.RequireClaim(ClaimTypes.Role, Constant.UserRole_Staff));
+                options.AddPolicy(Constant.AuthPolicy_StaffOnly,
+                    policy => policy.RequireRole(Constant.UserRole_Staff));
 
-                options.AddPolicy("CustomerOnly",
-                    policy => policy.RequireClaim(ClaimTypes.Role, Constant.UserRole_Customer));
+                options.AddPolicy(Constant.AuthPolicy_CustomerOnly,
+                    policy => policy.RequireRole(Constant.UserRole_Customer));
 
-                options.AddPolicy("ManagerAndAbove",
-                    policy => policy.RequireClaim(ClaimTypes.Role, Constant.UserRole_Admin, Constant.UserRole_Manager));
+                options.AddPolicy(Constant.AuthPolicy_ManagerAndAbove,
+                    policy => policy.RequireRole(
+                        Constant.UserRole_Admin,
+                        Constant.UserRole_Manager));
 
-                options.AddPolicy("StaffAndAbove",
-                    policy => policy.RequireClaim(ClaimTypes.Role, Constant.UserRole_Admin, Constant.UserRole_Manager, Constant.UserRole_Staff));
+                options.AddPolicy(Constant.AuthPolicy_StaffAndAbove,
+                    policy => policy.RequireRole(
+                        Constant.UserRole_Admin,
+                        Constant.UserRole_Manager,
+                        Constant.UserRole_Staff));
             });
 
             // Add Services
+            builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var app = builder.Build();
@@ -113,13 +121,13 @@ namespace DTVCinema
             }
 
             app.UseHttpsRedirection();
-
+            app.UseStaticFiles();
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();
-
             app.Run();
+
         }
     }
 }

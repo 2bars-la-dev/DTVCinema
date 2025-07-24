@@ -3,9 +3,10 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Utility.DTOs;
+using BusinessLogicLayer.DTOs;
+using Utility;
 
-namespace Utility
+namespace BusinessLogicLayer
 {
     public static class JwtHelper
     {
@@ -15,7 +16,7 @@ namespace Utility
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.Name),
-                new Claim("Role", user.Role)
+                new Claim(ClaimTypes.Role, user.Role)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:SecretKey"]));
